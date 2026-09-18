@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Lead-Gen Site Network — Shared Design System
+   Used across every site in the network. Copy this file into each
+   /sites/<name>/ folder at deploy time (no build step / no bundler —
+   static hosting only, so each site keeps its own copy in place).
+   ========================================================================== */
+
+:root {
+  --color-forest-900: #10261d;
+  --color-forest-800: #163828;
+  --color-forest-700: #1f4d38;
+  --color-forest-600: #2b6349;
+  --color-amber-500: #e08a2b;
+  --color-amber-600: #c8721c;
+  --color-cream-50: #faf8f3;
+  --color-cream-100: #f2ede1;
+  --color-ink-900: #201c16;
+  --color-ink-600: #4a453c;
+  --color-ink-300: #8a8477;
+  --color-border: #e4ddcc;
+  --color-white: #ffffff;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(16, 38, 29, 0.08);
+  --shadow-md: 0 6px 20px rgba(16, 38, 29, 0.10);
+
+  --container-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink-900);
+  background: var(--color-cream-50);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; font-weight: 700; }
+p { margin: 0 0 1em; }
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--color-amber-500);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover { background: var(--color-amber-600); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-forest-800);
+  border: 2px solid var(--color-forest-700);
+}
+.btn-secondary:hover { background: var(--color-cream-100); }
+.btn-block { width: 100%; }
+.btn-lg { padding: 18px 32px; font-size: 1.15rem; }
+
+.icon-phone {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+.header-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-forest-800);
+  white-space: nowrap;
+}
+.main-nav {
+  display: none;
+  gap: 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.main-nav a { color: var(--color-ink-600); }
+.main-nav a:hover { color: var(--color-forest-700); }
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-forest-800);
+  border: 2px solid var(--color-forest-700);
+  padding: 9px 16px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+.header-phone:hover { background: var(--color-cream-100); }
+
+@media (min-width: 880px) {
+  .main-nav { display: flex; }
+}
+
+/* ---------- Trust strip ---------- */
+.trust-strip {
+  background: var(--color-forest-900);
+  color: var(--color-cream-50);
+}
+.trust-strip .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  justify-content: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(160deg, var(--color-forest-800), var(--color-forest-700));
+  color: var(--color-white);
+  padding: 56px 0 48px;
+}
+.hero.hero-urgent {
+  background: linear-gradient(160deg, #7a2418, #9c3319);
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  max-width: 780px;
+}
+.hero-subhead {
+  font-size: 1.15rem;
+  max-width: 640px;
+  opacity: 0.95;
+  margin-bottom: 1.5em;
+}
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+/* ---------- Sections ---------- */
+.section { padding: 56px 0; }
+.section-alt { background: var(--color-cream-100); }
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-forest-800);
+}
+.section-lead {
+  font-size: 1.08rem;
+  max-width: 760px;
+  color: var(--color-ink-600);
+}
+
+/* ---------- Cards / grids ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--color-forest-800);
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+}
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-amber-500);
+}
+
+/* ---------- FAQ (native accordion, no JS) ---------- */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-forest-800);
+  font-size: 1.02rem;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  font-size: 1.3rem;
+  color: var(--color-amber-500);
+}
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { margin-top: 10px; color: var(--color-ink-600); }
+
+/* ---------- CTA banner ---------- */
+.cta-banner {
+  background: var(--color-forest-800);
+  color: var(--color-white);
+  text-align: center;
+  padding: 44px 0;
+}
+.cta-banner h2 { color: var(--color-white); }
+
+/* ---------- Contact form ---------- */
+.form-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  max-width: 640px;
+}
+.form-row { margin-bottom: 16px; }
+.form-row label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--color-cream-50);
+}
+.form-row textarea { min-height: 120px; resize: vertical; }
+.form-note { font-size: 0.85rem; color: var(--color-ink-300); }
+
+/* ---------- Emergency call-out box ---------- */
+.callout-box {
+  background: #fff4ec;
+  border: 1px solid #f0c9a3;
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  margin: 24px 0;
+}
+.callout-box h3 { color: var(--color-amber-600); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-forest-900);
+  color: var(--color-cream-100);
+  padding: 44px 0 90px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 28px;
+  margin-bottom: 28px;
+}
+.footer-name { font-weight: 800; font-size: 1.1rem; margin-bottom: 6px; }
+.footer-links a { display: block; margin-bottom: 8px; color: var(--color-cream-100); opacity: 0.9; }
+.footer-links a:hover { opacity: 1; text-decoration: underline; }
+.footer-links p strong { color: var(--color-cream-50); }
+.footer-copyright {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 18px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ---------- Sticky mobile call bar ---------- */
+.mobile-call-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: var(--color-amber-500);
+  padding: 12px 16px;
+  text-align: center;
+}
+.mobile-call-bar a {
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+@media (min-width: 880px) {
+  .mobile-call-bar { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-cta-row .btn { width: 100%; }
+}
