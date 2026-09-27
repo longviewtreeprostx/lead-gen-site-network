@@ -172,6 +172,13 @@ p { margin: 0 0 1em; }
   opacity: 0.95;
   margin-bottom: 1.5em;
 }
+.hero-agitate {
+  font-size: 1.05rem;
+  max-width: 640px;
+  font-weight: 600;
+  color: var(--color-amber-500);
+  margin: -0.75em 0 1.25em;
+}
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
