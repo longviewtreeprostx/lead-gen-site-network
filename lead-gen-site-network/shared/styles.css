@@ -369,3 +369,8 @@ p { margin: 0 0 1em; }
 @media (max-width: 640px) {
   .photo-frame.two-up { grid-template-columns: 1fr; }
 }
+
+.photo-frame.portrait img {
+  aspect-ratio: 4 / 3.9;
+  object-position: 50% 15%;
+}
