@@ -354,6 +354,10 @@ p { margin: 0 0 1em; }
   max-width: var(--container-width);
   padding: 0 24px;
 }
+.photo-frame picture {
+  display: block;
+  width: 100%;
+}
 .photo-frame img {
   width: 100%;
   border-radius: var(--radius-lg);
